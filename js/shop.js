@@ -58,8 +58,8 @@ function displayPost(posts) {
 function displayComment(comments) {
   const section = document.getElementById("comments");
   for (const comment of comments) {
-    console.log(comment);
     const div = document.createElement("div");
+    div.classList.add('post')
     div.innerHTML = `<h3>Name: ${comment.name}</h3> <h4>Email: ${comment.email}</h4><p>Body: ${comment.body}</p>`;
     section.appendChild(div);
   }
