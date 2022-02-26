@@ -17,10 +17,28 @@
       h1 span{
          color: greenyellow;
       }
+      button{
+         font-size: 20px;
+         margin-left: 100px;
+         background-color: red;
+         color: white;
+         text-align: center;
+
+      }
    </style>
 </head>
 <body>
+   <!-- Heading -->
    <H1>Taher <span>Store</span></H1>
+
+   <!-- Button -->
+   <button onclick="lodeUsers()">Lode User</button>
+   <button onclick="lodePosts()">Lode Post</button>
+   <button onclick="lodeComments()">Lode Commnents</button>
+
+   <ul id="users">
+
+   </ul>
    
 
 
@@ -29,6 +47,6 @@
 
 
 
-   <script src="index.js"></script>
+   <script src="js/shop.js"></script>
 </body>
 </html>
