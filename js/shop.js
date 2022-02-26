@@ -23,22 +23,44 @@ function lodeUsers() {
 function lodePosts() {
   fetch("https://jsonplaceholder.typicode.com/posts")
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((posts) => displayPost(posts));
 }
 function lodeComments() {
   fetch("https://jsonplaceholder.typicode.com/comments")
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((comments) => displayComment(comments));
 }
 
-/* Display Show */
+/* Display Show Users */
 
 function displayUsers(users) {
   const ul = document.getElementById("users");
   for (const user of users) {
-    console.log(user.name);
     const li = document.createElement("li");
-    li.innerText = user.name;
+    li.innerText = `hello my name is ${user.name}, \n my email id ${user.email}`;
     ul.appendChild(li);
+  }
+}
+
+/* Display Show Post */
+
+function displayPost(posts) {
+  const section = document.getElementById("posts");
+  for (const post of posts) {
+    const div = document.createElement("div");
+    div.innerHTML = `<h4>hello this is title ${post.title} </h4> <p>This is details ${post.body}`;
+    section.appendChild(div);
+  }
+}
+
+/* Display Comment */
+
+function displayComment(comments) {
+  const section = document.getElementById("comments");
+  for (const comment of comments) {
+    console.log(comment);
+    const div = document.createElement("div");
+    div.innerHTML = `<h3>Name: ${comment.name}</h3> <h4>Email: ${comment.email}</h4><p>Body: ${comment.body}</p>`;
+    section.appendChild(div);
   }
 }
